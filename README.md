@@ -1,39 +1,60 @@
 # Shivank Nigam
 
-Physics-engineer building AI systems for the physical world. Currently exploring differentiable physics, inverse design, and ML for hardware control.
+Physics engineer working on ML systems, scientific computing, and hardware
+control.
+
+I like projects where models have to respect measurement budgets, device
+constraints, and noisy physical systems: tensor-network diagnostics, photonic
+calibration loops, and efficient inference experiments.
+
+## Selected Work
+
+### [adapter-cache-tradeoffs](https://github.com/stannum13/adapter-cache-tradeoffs)
+
+Small-model serving experiment harness for measuring adapter specialization,
+routing policy behavior, and KV-cache locality tradeoffs.
+
+Current public state: routing-metric semantics corrected, SGLang/Vidur/vLLM
+upstream pins recorded, E001 preregistered, smoke and canonical configs checked
+in. Canonical SGLang results are not claimed yet.
+
+### [TNView](https://github.com/stannum13/tnview)
+
+Terminal-first telemetry for long-running tensor-network jobs.
+
+Current public state: append-only `RunLogger`, run-log schema validation,
+`tail`/`watch`/`replay`/`diagnose`/`compare` commands, Quimb/TeNPy upstream pins,
+and preregistered diagnostics E001. Diagnostics are deterministic heuristics
+until validated on the canonical corpus.
+
+### [pic-autotune-control](https://github.com/stannum13/pic-autotune-control)
+
+Virtual photonic-control lab for measurement-budgeted reacquisition experiments.
+
+Current public state: controller-facing `LabSession`, actuator/detector/drift/
+crosstalk/fault models, controller baselines and primitives, SAX upstream pin,
+and preregistered PhotonLock E001. The SAX adapter and canonical evidence are
+pending.
 
 ## Background
 
-- **Dirac Labs** — Founding Systems Engineer. Built sensor pipelines, Kalman filtering, and neural denoising for quantum magnetometry at 10-100 Hz real-time.
-- **ETH Zürich** — Thesis in theoretical molecular quantum dynamics. Accelerated nuclear-dynamics propagation 10x using tensor-network methods.
-- **EPFL** — Thesis in quantum photonics. Simulated and fabricated diamond photonic integrated circuits for quantum sensing.
-- **BITS Pilani** — B.E. Manufacturing + M.Sc. Physics.
+- **Dirac Labs** - Founding Systems Engineer. Built sensor pipelines, Kalman
+  filtering, and neural denoising for quantum magnetometry at 10-100 Hz
+  real-time.
+- **ETH Zurich** - Thesis in theoretical molecular quantum dynamics.
+  Accelerated nuclear-dynamics propagation using tensor-network methods.
+- **EPFL** - Thesis in quantum photonics. Simulated and fabricated diamond
+  photonic integrated circuits for quantum sensing.
+- **BITS Pilani** - B.E. Manufacturing + M.Sc. Physics.
 
-## Portfolio
+## Working Direction
 
-### [pic-autotune-control](https://github.com/stannum13/pic-autotune-control)
-Photonic IC autotuning virtual lab. Controllers (coordinate descent, Kalman, Bayesian optimization, MPC, particle filter), fabrication variation, fault primitives, RL environment wrapper, actor-critic superloop. 681 tests.
-
-**Currently building:** calibration benchmark comparing controllers under drift, crosstalk, and measurement budgets.
-
-### [photon-link-lab](https://github.com/stannum13/photon-link-lab)
-Silicon-photonic optical link simulator: PAM4/NRZ symbols through modulator, channel, photodiode, equalization, BER estimation, calibration, WDM, yield Monte Carlo, ML surrogate, and CPO benchmarks. Connects to my EPFL thesis work on photonic IC design.
-
-**Currently building:** Fourier Neural Operator surrogate for inverse link design.
-
-### [latent-future-vla](https://github.com/stannum13/latent-future-vla)
-Experiment scaffold for testing whether action-conditioned latent future prediction improves VLA policy robustness under OOD perturbations at fixed latency. Paired baseline/treatment rollout design, latency-gated evaluation, LIBERO/OpenVLA bridge hooks.
-
-### [adapter-cache-tradeoffs](https://github.com/stannum13/adapter-cache-tradeoffs)
-Benchmark harness for adapter specialization, KV-cache locality, and serving tradeoffs in causal-transformer systems. Compares semantic routing, cache-aware routing, sticky routing, and activated-LoRA-style late specialization.
-
-### [tnview](https://github.com/stannum13/tnview)
-Terminal-first telemetry and diagnostics tool for tensor-network runs (DMRG, TEBD). quimb/tenpy adapters, live watch mode, replay, diagnostics. v1.1.0 released.
-
-## Currently Building
-
-- **Differentiable quantum control pulse optimization** — JAX-based gradient optimization through Schrödinger evolution, comparing gradient-based methods against Bayesian optimization and standard swept calibration for qubit gate fidelity. Targets Conductor Quantum / Oratomic.
-- **FNO surrogate for photonic inverse design** — Training a Fourier Neural Operator to replace expensive EM simulation in photonic device optimization. Targets PhysicsX / Periodic Labs.
+- Evidence-bound ML systems experiments for efficient inference and scientific
+  tooling.
+- Hardware-aware control loops with explicit budgets, public observations, and
+  reproducible baselines.
+- Scientific software that is small enough to inspect and reproducible enough
+  to extend.
 
 ## Contact
 
