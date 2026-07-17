@@ -3,51 +3,57 @@
 Physics engineer working on evidence-bound ML systems, scientific computing, and
 hardware-aware control.
 
-I like projects where models and controllers have to respect measurement
-budgets, device constraints, held-out evaluation, and noisy physical systems.
+I like projects where models and controllers have to make decisions with limited
+measurements, messy hardware signals, and held-out tests instead of polished
+demo traces.
 
 ## Primary Work
 
 ### [adapter-cache-tradeoffs](https://github.com/stannum13/adapter-cache-tradeoffs)
 
-Small-model serving experiment harness for adapter specialization, routing
-policy behavior, and KV-cache locality tradeoffs. SGLang, Vidur, and vLLM pins
-are recorded; E001 is preregistered; canonical SGLang results are not claimed
-yet.
+Measures a practical serving question: when many fine-tuned adapters share one
+base model, can requests be routed so the GPU reuses cached work instead of
+starting cold each time? Current work covers routing metrics, upstream pins, and
+smoke experiments; canonical SGLang results are not claimed yet.
 
 ### [TNView](https://github.com/stannum13/tnview)
 
-Terminal telemetry, replay, and heuristic diagnostics for long-running
-tensor-network jobs. Current evidence covers deterministic run-log tooling and
-diagnostic scaffolding; canonical Quimb/TeNPy corpus validation remains pending.
+Terminal tools for long tensor-network simulations, the kind that can run for
+hours before failing. It records structured logs, replays runs, and surfaces
+early warning diagnostics; canonical Quimb/TeNPy corpus validation remains
+pending.
 
 ### [pic-autotune-control](https://github.com/stannum13/pic-autotune-control)
 
-Virtual photonic-control lab for measurement-budgeted reacquisition experiments.
-The repo has controller baselines, drift/fault models, a SAX upstream pin, and a
-preregistered PhotonLock E001; the SAX adapter and canonical evidence are still
-future work.
+Virtual lab for tuning photonic chips when heaters drift and every measurement
+costs time. It has controller baselines, drift/fault models, a SAX upstream pin,
+and a preregistered PhotonLock E001; the SAX adapter and canonical evidence are
+still future work.
 
 ### [episode-lens](https://github.com/stannum13/episode-lens)
 
-Deterministic robot episode-quality diagnostics and a LeRobot/LIBERO
-data-selection scaffold. Current evidence is manifest and quality-feature smoke
-testing, not a policy-improvement result.
+Scores robot demonstration files before training, so bad or incomplete episodes
+can be filtered instead of silently poisoning a policy dataset. Current evidence
+is manifest and quality-feature smoke testing, not a policy-improvement result.
 
-## Research Scaffolds
+## Focused Experiments
 
-- [marginalia](https://github.com/stannum13/marginalia) - budget-aware research
-  briefing and PaperQA2 adapter-smoke scaffold.
+- [marginalia](https://github.com/stannum13/marginalia) - tracks paper searches,
+  quotes, citations, and evidence while building budget-aware research briefs.
 - [policy-climb](https://github.com/stannum13/policy-climb) - deterministic
-  bounded policy-search benchmark scaffold with split-separated reporting.
+  benchmark for comparing small policy-search algorithms under the same
+  evaluation budget.
 - [linkscope](https://github.com/stannum13/linkscope) - silicon-photonic link
-  simulator scaffold with corrected Gray-coded BER accounting.
+  simulator that counts real Gray-coded bit errors through calibration and drift
+  tests.
 - [linebreak-uncertainty](https://github.com/stannum13/linebreak-uncertainty) -
-  BreakState line-breaking interpretability scaffold; no causal claim yet.
+  BreakState tests whether small language models encode line position when text
+  wraps to a new line.
 - [memplex](https://github.com/stannum13/memplex) - Fisher Damping optimizer
-  scaffold for spectral-statistic damping experiments.
+  experiments for choosing natural-gradient damping from curvature signals.
 - [qgf-autoresearch](https://github.com/stannum13/qgf-autoresearch) - QGF Ledger
-  replication postmortem and artifact ledger.
+  records bounded Q-Guided Flow replication attempts, artifacts, and failure
+  modes.
 
 ## Background
 
