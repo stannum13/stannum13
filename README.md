@@ -1,40 +1,53 @@
 # Shivank Nigam
 
-Physics engineer working on ML systems, scientific computing, and hardware
-control.
+Physics engineer working on evidence-bound ML systems, scientific computing, and
+hardware-aware control.
 
-I like projects where models have to respect measurement budgets, device
-constraints, and noisy physical systems: tensor-network diagnostics, photonic
-calibration loops, and efficient inference experiments.
+I like projects where models and controllers have to respect measurement
+budgets, device constraints, held-out evaluation, and noisy physical systems.
 
-## Selected Work
+## Primary Work
 
 ### [adapter-cache-tradeoffs](https://github.com/stannum13/adapter-cache-tradeoffs)
 
-Small-model serving experiment harness for measuring adapter specialization,
-routing policy behavior, and KV-cache locality tradeoffs.
-
-Current public state: routing-metric semantics corrected, SGLang/Vidur/vLLM
-upstream pins recorded, E001 preregistered, smoke and canonical configs checked
-in. Canonical SGLang results are not claimed yet.
+Small-model serving experiment harness for adapter specialization, routing
+policy behavior, and KV-cache locality tradeoffs. SGLang, Vidur, and vLLM pins
+are recorded; E001 is preregistered; canonical SGLang results are not claimed
+yet.
 
 ### [TNView](https://github.com/stannum13/tnview)
 
-Terminal-first telemetry for long-running tensor-network jobs.
-
-Current public state: append-only `RunLogger`, run-log schema validation,
-`tail`/`watch`/`replay`/`diagnose`/`compare` commands, Quimb/TeNPy upstream pins,
-and preregistered diagnostics E001. Diagnostics are deterministic heuristics
-until validated on the canonical corpus.
+Terminal telemetry, replay, and heuristic diagnostics for long-running
+tensor-network jobs. Current evidence covers deterministic run-log tooling and
+diagnostic scaffolding; canonical Quimb/TeNPy corpus validation remains pending.
 
 ### [pic-autotune-control](https://github.com/stannum13/pic-autotune-control)
 
 Virtual photonic-control lab for measurement-budgeted reacquisition experiments.
+The repo has controller baselines, drift/fault models, a SAX upstream pin, and a
+preregistered PhotonLock E001; the SAX adapter and canonical evidence are still
+future work.
 
-Current public state: controller-facing `LabSession`, actuator/detector/drift/
-crosstalk/fault models, controller baselines and primitives, SAX upstream pin,
-and preregistered PhotonLock E001. The SAX adapter and canonical evidence are
-pending.
+### [episode-lens](https://github.com/stannum13/episode-lens)
+
+Deterministic robot episode-quality diagnostics and a LeRobot/LIBERO
+data-selection scaffold. Current evidence is manifest and quality-feature smoke
+testing, not a policy-improvement result.
+
+## Research Scaffolds
+
+- [marginalia](https://github.com/stannum13/marginalia) - budget-aware research
+  briefing and PaperQA2 adapter-smoke scaffold.
+- [policy-climb](https://github.com/stannum13/policy-climb) - deterministic
+  bounded policy-search benchmark scaffold with split-separated reporting.
+- [linkscope](https://github.com/stannum13/linkscope) - silicon-photonic link
+  simulator scaffold with corrected Gray-coded BER accounting.
+- [linebreak-uncertainty](https://github.com/stannum13/linebreak-uncertainty) -
+  BreakState line-breaking interpretability scaffold; no causal claim yet.
+- [memplex](https://github.com/stannum13/memplex) - Fisher Damping optimizer
+  scaffold for spectral-statistic damping experiments.
+- [qgf-autoresearch](https://github.com/stannum13/qgf-autoresearch) - QGF Ledger
+  replication postmortem and artifact ledger.
 
 ## Background
 
@@ -47,15 +60,6 @@ pending.
   photonic integrated circuits for quantum sensing.
 - **BITS Pilani** - B.E. Manufacturing + M.Sc. Physics.
 
-## Working Direction
-
-- Evidence-bound ML systems experiments for efficient inference and scientific
-  tooling.
-- Hardware-aware control loops with explicit budgets, public observations, and
-  reproducible baselines.
-- Scientific software that is small enough to inspect and reproducible enough
-  to extend.
-
 ## Contact
 
-shivanknigam@gmail.com · [LinkedIn](https://linkedin.com/in/shivanknigam)
+shivanknigam@gmail.com - [LinkedIn](https://linkedin.com/in/shivanknigam)
